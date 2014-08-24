@@ -13,6 +13,10 @@ public class CamerTracksPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (player != null) {
+			Vector3 pos = transform.position;
+			pos.x = player.position.x + offsetx;
+			transform.position = pos;
+		}
 	}
 }
