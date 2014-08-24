@@ -3,8 +3,13 @@ using System.Collections;
 
 public class BackgroundLooper : MonoBehaviour {
 
+	int numBackgrounPanels = 4;
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		Debug.Log ("Trigger :"+ collider.name);
+		Debug.Log ("Triggered "+ collider.name);
+		float widthOfBackgroundObject = ((BoxCollider2D)collider).size.x;
+		Vector3 pos = collider.transform.position;
+		pos.x += widthOfBackgroundObject * numBackgrounPanels;
+		collider.transform.position = pos;
 	}
 }
