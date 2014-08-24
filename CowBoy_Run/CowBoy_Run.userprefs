@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\4.Running 2\CowBoy_Run\Assets\Running.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RunningBoy.cs">
     <Files>
-      <File FileName="..\..\4.Running 2\CowBoy_Run\Assets\Running.cs" Line="34" Column="3" />
+      <File FileName="Assets\RunningBoy.cs" Line="27" Column="29" />
+      <File FileName="C:\Users\Rahul\Desktop\CowBoy_Run\Assets\Code\RunnigBoy.cs" Line="13" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
