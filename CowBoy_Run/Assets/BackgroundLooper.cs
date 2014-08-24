@@ -9,9 +9,8 @@ public class BackgroundLooper : MonoBehaviour {
 		//Debug.Log ("Triggered "+ collider.name);
 		float widthOfBackgroundObject = ((BoxCollider2D)collider).size.x;
 		Vector3 pos = collider.transform.position;
-	//	pos.x += widthOfBackgroundObject * numBackgrounPanels;
-		pos.x += widthOfBackgroundObject * numBackgrounPanels - widthOfBackgroundObject/2 ;
-
+		pos.x += widthOfBackgroundObject * numBackgrounPanels - widthOfBackgroundObject/2f;
 		collider.transform.position = pos;
 	}
+
 }

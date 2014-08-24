@@ -2,11 +2,12 @@
 using System.Collections;
 
 public class GroundProtect : MonoBehaviour {
+	float speed = 0.5f;
 
-	float speed = 0f;
-	void FixedUpdate () {
+	void FixedUpdate ()
+	{
 		Vector3 pos = transform.position;
-		pos.x += speed * Time.deltaTime;
+		pos.x += speed * Time.deltaTime; 
 		transform.position = pos;
 	}
 }
