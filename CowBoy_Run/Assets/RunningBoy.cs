@@ -9,7 +9,7 @@ public class RunningBoy : MonoBehaviour {
 	public float forwardSpeed = 1f;
 	public float jumpSpeed = 50f;
 
-	
+	Animator animator;
 	bool manJump = false;
 	// Use this for initialization
 	void Start () {
@@ -19,6 +19,7 @@ public class RunningBoy : MonoBehaviour {
 	// Do graphics and input update 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown (0)) {
+			animator.SetBool("jump",true);;
 			manJump = true;		
 		}
 	} 
@@ -29,6 +30,12 @@ public class RunningBoy : MonoBehaviour {
 		if (manJump) {
 			rigidbody2D.AddForce (Vector2.up * jumpSpeed);
 			manJump = false;
+		}
+
+		void OnCollisionEnter2D(Collision2D collision)
+		{
+			if(collision.collider.tag=="ground")
+				animator.SetBool("jump",false);
 		}
 
 	} 
