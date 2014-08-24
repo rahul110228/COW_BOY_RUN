@@ -7,10 +7,10 @@ public class RunningBoy : MonoBehaviour {
 	//public Vector3 flapVelocity;
 	//public float maxSpeed = 5f;
 	public float forwardSpeed = 1f;
-	public float jumpSpeed = 9.8f;
+	public float jumpSpeed = 50f;
 
 	
-	bool dipFlap = false;
+	bool manJump = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -19,14 +19,17 @@ public class RunningBoy : MonoBehaviour {
 	// Do graphics and input update 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown (0)) {
-			dipFlap = true;		
+			manJump = true;		
 		}
 	} 
 	
 	//Do physics engines update here
 	void FixedUpdate(){ 
 		rigidbody2D.AddForce (Vector2.right * forwardSpeed);
-		rigidbody2D.AddForce (Vector2.up * jumpSpeed);
+		if (manJump) {
+			rigidbody2D.AddForce (Vector2.up * jumpSpeed);
+			manJump = false;
+		}
 
 	} 
 }
