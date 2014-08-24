@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\BackgroundLooper.cs" />
      <Compile Include="Assets\CamerTracksPlayer.cs" />
+     <Compile Include="Assets\GroundProtect.cs" />
      <Compile Include="Assets\RunningBoy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
