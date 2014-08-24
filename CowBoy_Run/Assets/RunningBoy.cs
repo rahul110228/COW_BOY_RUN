@@ -6,10 +6,10 @@ public class RunningBoy : MonoBehaviour {
 	Vector3 velocity = Vector3.zero;
 	public Vector3 gravity;
 	public Vector3 flapVelocity;
-	public float maxSpeed = 5f;
+	public float jumpSpeed = 5f;
 	public float forwardSpeed = 1f;
 	
-	bool dipFlap = false;
+	bool manJump = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,7 +18,7 @@ public class RunningBoy : MonoBehaviour {
 	// Do graphics and input update 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Space) || Input.GetMouseButtonDown (0)) {
-			dipFlap = true;		
+			manJump = true;		
 		}
 	}
 	
@@ -27,8 +27,8 @@ public class RunningBoy : MonoBehaviour {
 		velocity.x = forwardSpeed;
 		velocity += gravity * Time.deltaTime;
 		
-		if (dipFlap == true) {
-			dipFlap = true;
+		if (manJump == true) {
+			manJump = true;
 			velocity += flapVelocity;
 			if(velocity.y <0)
 			{
@@ -36,12 +36,18 @@ public class RunningBoy : MonoBehaviour {
 			}
 			velocity += flapVelocity;
 		}
-		velocity = Vector3.ClampMagnitude (velocity, maxSpeed);
+		velocity = Vector3.ClampMagnitude (velocity, jumpSpeed);
 		transform.position += velocity * Time.deltaTime;
+
+		if (manJump) {
+			rigidbody2D.AddForce(Vector2.up* jumpSpeed);
+			manJump = false;
+			
+		}
 
 		float angle = 0;
 		if (velocity.y < 0) {
-			angle = Mathf.Lerp(0, -90, -velocity.y /maxSpeed);
+			angle = Mathf.Lerp(0, -90, -velocity.y /jumpSpeed);
 		}
 		transform.rotation = Quaternion.Euler (0, 0, angle);
 	}
