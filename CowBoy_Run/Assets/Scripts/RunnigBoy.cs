@@ -10,6 +10,10 @@ public class RunnigBoy : MonoBehaviour {
 	public GameObject[] obs=new GameObject[2];
 	bool manJump = false;
 	Animator animator ;
+	private uint coins = 0;
+	public Texture2D coinIconTexture;
+	public AudioClip coinCollectSound;
+
 
 	// Use this for initialization
 	void Start () {
@@ -47,10 +51,49 @@ public class RunnigBoy : MonoBehaviour {
 
 		}
 	}
+
+
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if(collision.collider.tag=="ground")
 				animator.SetBool("jump",false);
+
+
+	}
+
+	void CollectCoin(Collider2D coinCollider)
+	{
+		coins++;
+		
+		Destroy(coinCollider.gameObject);
+		AudioSource.PlayClipAtPoint(coinCollectSound, transform.position);
+	}
+	void OnTriggerEnter2D(Collider2D collider)
+	{
+		if (collider.gameObject.CompareTag ("Coins")) {
+						CollectCoin (collider);
+				}
+	}
+
+	void DisplayCoinsCount()
+	{
+		Rect coinIconRect = new Rect(10, 10, 32, 32);
+		GUI.DrawTexture(coinIconRect, coinIconTexture);                         
+		
+		GUIStyle style = new GUIStyle();
+		style.fontSize = 30;
+		style.fontStyle = FontStyle.Bold;
+		style.normal.textColor = Color.yellow;
+		
+		Rect labelRect = new Rect(coinIconRect.xMax, coinIconRect.y, 60, 32);
+		GUI.Label(labelRect, coins.ToString(), style);
+
+	}
+
+	void OnGUI()
+	{
+		DisplayCoinsCount();
+
 	}
 	
 }

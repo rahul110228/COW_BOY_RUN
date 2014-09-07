@@ -46,11 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BackgroundLooper.cs" />
-     <Compile Include="Assets\CameraTracksPlayer.cs" />
-     <Compile Include="Assets\GroundProtect.cs" />
-     <Compile Include="Assets\RunnigBoy.cs" />
-     <Compile Include="Assets\Score.cs" />
+     <Compile Include="Assets\Laser.cs" />
+     <Compile Include="Assets\Scripts\BackgroundLooper.cs" />
+     <Compile Include="Assets\Scripts\CameraTracksPlayer.cs" />
+     <Compile Include="Assets\Scripts\Genaretor.cs" />
+     <Compile Include="Assets\Scripts\GroundProtect.cs" />
+     <Compile Include="Assets\Scripts\RunnigBoy.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
