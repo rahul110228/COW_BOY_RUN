@@ -58,6 +58,13 @@ public class RunnigBoy : MonoBehaviour {
 		if(collision.collider.tag=="ground")
 				animator.SetBool("jump",false);
 
+		if(collision.collider.tag=="Ghost")
+		{
+			Destroy(this.gameObject);
+			gameObject.GetComponent<Score>().isDead=true;
+			//Debug.Log("Touched");
+		}
+
 
 	}
 
@@ -70,11 +77,13 @@ public class RunnigBoy : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		if (collider.gameObject.CompareTag ("Coins")) {
-						CollectCoin (collider);
-				}
-	}
+		if (collider.gameObject.CompareTag ("Coins")) 
+		{
+			CollectCoin (collider);
+				
+		}
 
+	}
 	void DisplayCoinsCount()
 	{
 		Rect coinIconRect = new Rect(10, 10, 32, 32);

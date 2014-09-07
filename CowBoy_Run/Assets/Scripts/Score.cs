@@ -5,10 +5,12 @@ public class Score : MonoBehaviour {
 	
 
 	public float runingScore = 0;
+	public bool isDead=false;
 
-	void Update () {
-
-		runingScore += Time.deltaTime;
+	void Update () 
+	{
+		if(isDead==false)
+			runingScore += Time.deltaTime;
 		
 	}
 	

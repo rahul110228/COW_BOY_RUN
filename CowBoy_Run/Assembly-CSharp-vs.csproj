@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Laser.cs" />
      <Compile Include="Assets\Scripts\BackgroundLooper.cs" />
      <Compile Include="Assets\Scripts\CameraTracksPlayer.cs" />
      <Compile Include="Assets\Scripts\Genaretor.cs" />
