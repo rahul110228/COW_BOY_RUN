@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RunnigBoy.cs">
     <Files>
-      <File FileName="Assets\Scripts\RunnigBoy.cs" Line="63" Column="14" />
-      <File FileName="Assets\Scripts\Score.cs" Line="11" Column="2" />
-      <File FileName="Assets\Scripts\Genaretor.cs" Line="81" Column="2" />
+      <File FileName="Assets\Scripts\RunnigBoy.cs" Line="63" Column="29" />
+      <File FileName="Assets\Scripts\RunnigBoy.cs" Line="109" Column="1" />
+      <File FileName="Assets\Scripts\Score.cs" Line="8" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
