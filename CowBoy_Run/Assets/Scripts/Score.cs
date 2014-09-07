@@ -7,6 +7,8 @@ public class Score : MonoBehaviour {
 	public float runingScore = 0;
 	public bool isDead=false;
 
+
+
 	void Update () 
 	{
 		if(isDead==false)

@@ -13,7 +13,7 @@ public class RunnigBoy : MonoBehaviour {
 	private uint coins = 0;
 	public Texture2D coinIconTexture;
 	public AudioClip coinCollectSound;
-
+	bool dead=false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,18 +22,17 @@ public class RunnigBoy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (dead == true) 
+		
+		{
+			Debug.Log("Die");
+			GameObject.Find("Score").GetComponent<Score>().isDead=true;
+		}
 		if (Input.GetKey (KeyCode.Space) || Input.GetMouseButton (0)) {
 			animator.SetBool("jump",true);
 			rigidbody2D.AddForce(Vector2.up* jumpSpeed);
 		}
-		//Random r = new Random ();
-		/*if (Random.Range (1, 10) < 5) 
-		{
-			Instantiate(obs[0],Camera.main.tran*form.position,Quaternion.identity);
-		}
-		else if(Random.Range(1,10000)==1)
-			obs[1].SetActive(true);*/
-
 	}
 	
 
@@ -58,10 +57,12 @@ public class RunnigBoy : MonoBehaviour {
 		if(collision.collider.tag=="ground")
 				animator.SetBool("jump",false);
 
-		if(collision.collider.tag=="Ghost")
+		else if(collision.collider.tag=="Ghost")
 		{
-			Destroy(this.gameObject);
-			gameObject.GetComponent<Score>().isDead=true;
+			//Destroy(this.gameObject);
+			dead=true;
+			//gameObject.GetComponent<Score>().isDead=true;
+
 			//Debug.Log("Touched");
 		}
 
